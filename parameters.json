@@ -1,0 +1,68 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "westus"
+        },
+        "networkInterfaceName": {
+            "value": "jj-test-vm4759"
+        },
+        "enableAcceleratedNetworking": {
+            "value": true
+        },
+        "networkSecurityGroupName": {
+            "value": "JJ-test-vm4-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "RDP",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "3389"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "subnet1"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/201b458f-5c9b-42c2-8bd6-17d8617e98af/resourceGroups/JJ_LAB_RG/providers/Microsoft.Network/virtualNetworks/LAB_VNET1"
+        },
+        "publicIpAddressName": {
+            "value": "JJ-test-vm4-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "virtualMachineName": {
+            "value": "JJ-test-vm4"
+        },
+        "virtualMachineRG": {
+            "value": "JJ_LAB_RG"
+        },
+        "osDiskType": {
+            "value": "Premium_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_DS2_v2"
+        },
+        "adminUsername": {
+            "value": "jjara"
+        },
+        "adminPassword": {
+            "value": null
+        }
+    }
+}
